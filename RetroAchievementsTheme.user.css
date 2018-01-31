@@ -2,7 +2,7 @@
 @name           RetroAchievements ReWorked
 @namespace      github.com/Picked-Random/
 @homepageURL    https://github.com/Picked-Random/RetroAchievements-ReWorked-Theme
-@version        0.8.1
+@version        0.8.2
 @description    A more modern appearance for RetroAchievements
 @author         Picked Random
 @license        Unlicense
@@ -10,10 +10,14 @@
 
 @advanced color background-color "Background Color" #000
 @advanced color link-color "Link Color" #c90
+@advanced color text-color "Text Color" #2c97fa
+@advanced select text-font "Website Font" ["Verdana", "Open Sans", "Rosario", "Arial"]
 ==/UserStyle== */
 @-moz-document domain("retroachievements.org") {
   body {
     background-color: /*[[background-color]]*/;
+    color: /*[[text-color]]*/;
+    font-family: "/*[[text-font]]*/", sans-serif;
   }
   a {
     color: /*[[link-color]]*/;
@@ -37,7 +41,7 @@
     background-color: #1a1a1a;
     border: 2px solid #141414;
     border-radius: 8px;
-    color: #cc9900;
+    color: /*[[link-color]]*/;
   }
   #title {
     position: fixed;
@@ -60,7 +64,7 @@
   .searchboxinput {
     background-color: #1a1a1a;
     border: 2px solid #141414;
-    color: #2c97fa;
+    color: /*[[text-color]]*/;
     border-radius: 8px;
     padding-left: 3px;
     padding-right: 3px;
@@ -72,7 +76,7 @@
     width: 180px;
   }
   .searchbox input[type="submit"] {
-    color: #2c97fa;
+    color: /*[[text-color]]*/;
     background-color: #424242;
     border: 2px solid #141414;
     border-radius: 8px;
@@ -167,7 +171,7 @@
   .usersummary img {
     border: 3px solid;
     border-radius: 8px;
-    color: #2c97fa;
+    color: /*[[text-color]]*/;
   }
   .usermotto {
     width: 50%;
