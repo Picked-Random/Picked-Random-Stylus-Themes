@@ -2,7 +2,7 @@
 @name           RetroAchievements ReWorked
 @namespace      github.com/Picked-Random/
 @homepageURL    https://github.com/Picked-Random/RetroAchievements-ReWorked-Theme
-@version        0.8.0
+@version        0.8.1
 @description    A more modern appearance for RetroAchievements
 @author         Picked Random
 @license        Unlicense
@@ -170,7 +170,10 @@
     color: #2c97fa;
   }
   .usermotto {
-    width: 30%;
+    width: 50%;
+  }
+  #WzTtDiV .usermotto {
+    width: 80%;
   }
   /* Settings */
   #resetgameselector {
