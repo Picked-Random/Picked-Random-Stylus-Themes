@@ -1,0 +1,194 @@
+/* ==UserStyle==
+@name           RetroAchievements ReWorked
+@namespace      github.com/Picked-Random/
+@version        0.8.0
+@description    A more modern appearance for RetroAchievements
+@author         Picked Random
+@license        Unlicense
+@preprocessor   uso
+
+@advanced color background-color "Background Color" #000
+@advanced color link-color "Link Color" #c90
+==/UserStyle== */
+@-moz-document domain("retroachievements.org") {
+  body {
+    background-color: /*[[background-color]]*/;
+  }
+  a {
+    color: /*[[link-color]]*/;
+  }
+  /* Header */
+  .login {
+    position: relative;
+    width: 350px;
+  }
+  .login p {
+    margin: 0px;
+  }
+  .login .userpic {
+    border-radius: 4px;
+    border: 2px solid;
+  }
+  #themeselect {
+    position: relative;
+    bottom: 60px;
+    right: 295px;
+    background-color: #1a1a1a;
+    border: 2px solid #141414;
+    border-radius: 8px;
+    color: #cc9900;
+  }
+  #title {
+    position: fixed;
+    min-width: 800px;
+    max-width: none;
+    width: 100%;
+    height: 108px;
+    top: 0px;
+    z-index: 500;
+  }
+  /* Navbar */
+  #innermenu {
+    position: fixed;
+    max-width: none;
+    width: 100%;
+    top: 108px;
+    background-image: none;
+    background: linear-gradient(0deg, #141414, #2a2a2a);
+  }
+  .searchboxinput {
+    background-color: #1a1a1a;
+    border: 2px solid #141414;
+    color: #2c97fa;
+    border-radius: 8px;
+    padding-left: 3px;
+    padding-right: 3px;
+    transition: width 0.5s, background-color 0.5s;
+    width: 110px;
+  }
+  .searchboxinput:focus {
+    background-color: #121212;
+    width: 180px;
+  }
+  .searchbox input[type="submit"] {
+    color: #2c97fa;
+    background-color: #424242;
+    border: 2px solid #141414;
+    border-radius: 8px;
+    padding-left: 3px;
+    padding-right: 3px;
+  }
+  #innermenu ul li a {
+    background-image: none;
+    transition: background-color 0.15s, color 0.15s;
+  }
+  #innermenu ul li:hover a {
+    background-image: none;
+    background-color: #fff1;
+  }
+  #innermenu ul li:hover a[href="#"] {
+    cursor: default;
+  }
+  #innermenu ul li ul {
+    background-color: #5a5a5a;
+    background-image: none !important;
+    border-radius: 8px;
+    padding-bottom: 8px !important;
+    width: 153px !important;
+  }
+  #innermenu ul li ul li {
+    margin-bottom: 6px;
+    background-color: transparent;
+  }
+  #innermenu ul li ul li a {
+    background-image: none !important;
+    background-color: #5a5a5a !important;
+    margin-bottom: 3px;
+  }
+  #innermenu ul li ul li a:hover {
+    background-color: #787878 !important;
+  }
+  #innermenu ul li ul li a:hover[href="#"] {
+    cursor: pointer;
+  }
+  /* Main Page */
+  #mainpage {
+    max-width: none;
+    top: 130px;
+    margin: 6px;
+  }
+  #leftcontainer {
+    margin-right: 400px;
+  }
+  #rightcontainer {
+    width: 350px;
+  }
+  .component {
+    margin-bottom: 8px;
+  }
+  .streamvid {
+    height: 197px;
+  }
+  .streamvid iframe {
+    width: 350px;
+    height: 197px;
+  }
+  #footer {
+    display: none;
+  }
+  /* Achievement Bars */
+  .completionhardcore,
+  .progressbar,
+  .completion {
+    border-radius: 8px;
+  }
+  .progressbar {
+    border: 1px solid #000;
+    background-color: #141414;
+  }
+  /* Achievements */
+  .userpagegames .bb_inline a img {
+    border-radius: 8px;
+    margin: 2px;
+  }
+  /* Profile */
+  .longheader {
+    display: none;
+  }
+  .usersummary {
+    background-color: #3c3c3c;
+    border: 3px solid #000;
+    border-radius: 8px;
+    color: #ddd;
+    margin-top: 15px;
+    padding: 10px;
+  }
+  .usersummary img {
+    border: 3px solid;
+    border-radius: 8px;
+    color: #2c97fa;
+  }
+  .usermotto {
+    width: 30%;
+  }
+  /* Settings */
+  #resetgameselector {
+    width: 60%;
+    max-width: 500px;
+    margin-right: 2px;
+    margin-top: 3px;
+  }
+  #resetachievementscontrol {
+    display: inline;
+  }
+  #resetachievementscontrol + input {
+    display: block;
+    margin-top: 3px;
+  }
+  #resetachievementscontainer {
+    width: 38%;
+    margin-right: 2px;
+    max-width: 300px;
+    margin-top: 3px;
+  }
+}
