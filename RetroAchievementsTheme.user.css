@@ -8,10 +8,11 @@
 @license        Unlicense
 @preprocessor   stylus
 
-@var color background-usercolor "Background Color" #000
-@var color link-color "Link Color" #c90
-@var color text-color "Text Color / Accent Color" #2c97fa
+@var checkbox sticky-header "Sticky Header" 1
 @var select text-font "Website Font" ["Verdana", "Open Sans", "Rosario", "Arial"]
+@var color text-color "Text Color / Accent Color" #2c97fa
+@var color link-color "Link Color" #c90
+@var color background-usercolor "Background Color" #000
 ==/UserStyle== */
 @-moz-document domain("retroachievements.org") {
   body {
@@ -23,6 +24,11 @@
     color: link-color;
   }
   /* Header */
+  #topborder {
+    if not sticky-header {
+      display: none;
+    }
+  }
   .login {
     position: relative;
     width: 350px;
@@ -43,8 +49,15 @@
     border-radius: 8px;
     color: link-color;
   }
+  #themeselect option[value="/css/rac_green.css"],
+ #themeselect option[value="/css/rac_red.css"],
+ #themeselect option[value="/css/rac_spooky.css"] {
+    display: none;
+  }
   #title {
-    position: fixed;
+    if sticky-header {
+      position: fixed;
+    }
     min-width: 800px;
     max-width: none;
     width: 100%;
@@ -54,10 +67,12 @@
   }
   /* Navbar */
   #innermenu {
-    position: fixed;
+    if sticky-header {
+      position: fixed;
+      top: 108px;
+    }
     max-width: none;
     width: 100%;
-    top: 108px;
     background: linear-gradient(0deg, #141414, #2a2a2a);
   }
   .searchboxinput {
@@ -118,7 +133,9 @@
   /* Main Page */
   #mainpage {
     max-width: none;
-    top: 130px;
+    if sticky-header {
+      top: 130px;
+    }
     margin: 6px;
   }
   #leftcontainer {
