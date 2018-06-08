@@ -1,8 +1,8 @@
 /* ==UserStyle==
 @name           RetroAchievements ReWorked
 @namespace      github.com/Picked-Random/
-@homepageURL    https://github.com/Picked-Random/RetroAchievements-ReWorked-Theme
-@version        0.9.2
+@homepageURL    https://github.com/Picked-Random/Picked-Random-Stylus-Themes
+@version        0.9.3
 @description    A more modern appearance for RetroAchievements
 @author         Picked Random
 @license        Unlicense
@@ -50,8 +50,8 @@
     color: link-color;
   }
   #themeselect option[value="/css/rac_green.css"],
- #themeselect option[value="/css/rac_red.css"],
- #themeselect option[value="/css/rac_spooky.css"] {
+  #themeselect option[value="/css/rac_red.css"],
+  #themeselect option[value="/css/rac_spooky.css"] {
     display: none;
   }
   #title {
