@@ -1,0 +1,112 @@
+/* ==UserStyle==
+@name           Tweetdeck Custom
+@namespace      github.com/Picked-Random/
+@version        0.1.0
+@description    A new userstyle
+@author         Picked Random
+@license				CC-BY-4.0
+@preprocessor		stylus
+
+@var text column-width-desired "Column Width" 27%
+@var text column-width-min "Column Width Minimum" 310px
+@var text background-url "Background Image" url("")
+@var color website-background "Background Color" #000
+@var select background-stretch "Background Image Cover" ["auto", "cover, contain", "contain"]
+@var select position-background "Background Image Position" ["top left", "left", "bottom left", "bottom", "bottom right", "right", "top right", "top", "center"]
+@var checkbox repeat-background "Background Image Repeat" 0
+@var color column-background "Column Background" #222
+@var color header-color "Header Color" #333
+@var color text-color "Text Color" #e1e8ed
+@var color accent-color "Accent Color" #1da1f2
+@var color bord-color "Border Color" #000
+==/UserStyle== */
+
+
+@-moz-document domain("tweetdeck.twitter.com") {
+  html, .account-link, .column-header, 
+  .column-header .column-type-icon, .tweet-stat, 
+  .column-title-back, .tweet-text {
+    color: text-color !important;
+  }
+  .thread, html.dark .thread {
+    background-color: text-color !important;
+  }
+  .column-header, .detail-view-inline,
+  .stream-item, .facet-type, .with-column-divider-bottom {
+    border-bottom: 1px solid bord-color !important;
+  }
+  .facet-type:last-child {
+    border-bottom: none !important;
+  }
+  .tweet-stats, .tweet-detail-actions,
+ .detail-view-inline, .accordion-divider-t {
+    border-top: 1px solid bord-color !important;
+  }
+  .column {
+    width: column-width-desired !important;
+    min-width: column-width-min !important;
+    background-color: column-background !important;
+  }
+  .tweet-detail-wrapper {
+    background-color: column-background !important;
+  }
+  .scroll-conversation, .detail-view-inline {
+    background-color: column-background !important;
+  }
+  .column-header, .column-message, .column-options, .button-tray {
+    background-color: header-color !important;
+  }
+  .app-header, .facet-type.is-active {
+    background-color: header-color !important;
+  }
+  button.btn-bg-positive {
+    background-color: header-color !important;
+    border-top: 1px solid bord-color !important;
+  }
+  .app-title, .app-navigator, .column-nav-item {
+    background-color: header-color !important;
+  }
+  .is-options-open .column-settings-link {
+    border-color: bord-color !important;
+    background-color: header-color !important;
+  }
+  .quoted-tweet {
+    border-color: bord-color !important;
+  }
+  .app-nav-link, .app-nav-tab, .other-replies-link, a, a:hover,
+ 	.color-twitter-blue{
+    color: accent-color !important;
+  }
+	.txt-mute a:not(:hover):not(:focus) {
+		color: #8899a6 !important;
+	}
+  .Button {
+    background-color: accent-color !important;
+    border-color: accent-color !important;
+  }
+  .app-search-fake, .js-user-actions-menu,
+  .action-text {
+    border-color: accent-color !important;
+  }
+  .app-search-fake .icon, .facet-subtitle,
+  .is-options-open .column-settings-link,
+  .url-ext, a[rel="url noopener noreferrer"],
+  .js-user-actions-menu, .Button--link {
+    color: accent-color !important;
+  }
+  .app-columns-container {
+    background-color: website-background !important;
+    background-image: background-url !important;
+		background-position: position-background !important;
+    background-size: background-stretch !important;
+		if !repeat-background {
+			background-repeat: no-repeat;
+		}
+  }
+  .stream-item {
+    background-color: column-background !important;
+  }
+  #settings-modal {
+    color: #000 !important;
+  }
+}
