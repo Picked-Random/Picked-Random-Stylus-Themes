@@ -1,11 +1,12 @@
 /* ==UserStyle==
 @name           Tweetdeck Custom
 @namespace      github.com/Picked-Random/
-@version        0.1.0
-@description    A new userstyle
+@homepageURL    https://github.com/Picked-Random/Picked-Random-Stylus-Themes
+@version        0.1.1
+@description    A customizable Tweetdeck theme
 @author         Picked Random
-@license				CC-BY-4.0
-@preprocessor		stylus
+@license	CC-BY-4.0
+@preprocessor	stylus
 
 @var text column-width-desired "Column Width" 27%
 @var text column-width-min "Column Width Minimum" 310px
