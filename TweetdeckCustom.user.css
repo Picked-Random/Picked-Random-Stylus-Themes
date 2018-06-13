@@ -2,7 +2,7 @@
 @name           Tweetdeck Custom
 @namespace      github.com/Picked-Random/
 @homepageURL    https://github.com/Picked-Random/Picked-Random-Stylus-Themes
-@version        0.2.0
+@version        0.2.1
 @description    A customizable Tweetdeck theme
 @author         Picked Random
 @license	      MIT
@@ -24,7 +24,6 @@
 @var color compose-bg "Secondary Accent" #2b7bb9
 @var color bord-color "Border Color" #000
 ==/UserStyle== */
-
 
 @-moz-document domain("tweetdeck.twitter.com") {
   html,
@@ -62,7 +61,9 @@
   .prf-stats a strong, 
   .column-title-back,
   button.Button--link,
-  html.dark button.Button--link {
+  html.dark button.Button--link,
+  .list-link,
+  html.dark .is-inverted-dark .list-link {
     color: text-color;
   }
   .txt-mute,
@@ -207,6 +208,26 @@
   .column.is-focused {
     box-shadow: 0 0 0 5px accent-color !important;
     transition: box-shadow .25s ease-in-out 0s;
+  }
+  
+  /* Webkit Scrollbars */
+  .scroll-styled-h::-webkit-scrollbar-thumb,
+  .scroll-styled-v::-webkit-scrollbar-thumb,
+  html.dark .scroll-styled-h::-webkit-scrollbar-thumb,
+  html.dark .scroll-styled-v::-webkit-scrollbar-thumb {
+    background-color: accent-color;
+  }
+  .scroll-styled-h::-webkit-scrollbar-thumb:hover,
+  .scroll-styled-v::-webkit-scrollbar-thumb:hover,
+  html.dark .scroll-styled-h::-webkit-scrollbar-thumb:hover,
+  html.dark .scroll-styled-v::-webkit-scrollbar-thumb:hover {
+    background-color: compose-bg;
+  }
+  .scroll-styled-h::-webkit-scrollbar-track,
+  .scroll-styled-v::-webkit-scrollbar-track,
+  html.dark .scroll-styled-h::-webkit-scrollbar-track,
+  html.dark .scroll-styled-v::-webkit-scrollbar-track {
+    border-color: bord-color;
   }
   
   /* Compose Tweet */
