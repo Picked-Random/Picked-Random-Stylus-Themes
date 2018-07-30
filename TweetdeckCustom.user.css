@@ -1,12 +1,12 @@
 /* ==UserStyle==
-@name           Tweetdeck Custom
-@namespace      github.com/Picked-Random/
-@homepageURL    https://github.com/Picked-Random/Picked-Random-Stylus-Themes
-@version        0.2.1
-@description    A customizable Tweetdeck theme
-@author         Picked Random
-@license	      MIT
-@preprocessor	  stylus
+@name	Tweetdeck Custom
+@namespace	github.com/Picked-Random/
+@homepageURL	https://github.com/Picked-Random/Picked-Random-Stylus-Themes
+@version	0.3.0
+@description	A customizable Tweetdeck theme
+@author	Picked Random
+@license	MIT
+@preprocessor	stylus
 
 @var text column-width-desired "Column Width" 27%
 @var text column-width-min "Column Width Minimum" 310px
@@ -17,240 +17,349 @@
 @var checkbox bg-repeat "Background Image Repeat" 0
 @var color column-bg "Column Background" #222
 @var color header-bg "Header Color" #333
+@var color overlay-bg "Overlay Color" #292f33e6
 @var color text-color "Text Color" #e1e8ed
 @var color sub-text "Secondary Text Color" #8899a6
+@var color quote-text "Quote Text Color" #657786
 @var color user-color "Username Color" #fff
 @var color accent-color "Accent Color" #1da1f2
 @var color compose-bg "Secondary Accent" #2b7bb9
 @var color bord-color "Border Color" #000
+@var checkbox experimental "Enable Overlay Blur (Chrome Experimental Flag Required)" 0
+@var checkbox pride-logo "Enable Rainbow Icon" 0
 ==/UserStyle== */
 
 @-moz-document domain("tweetdeck.twitter.com") {
-  html,
-  html.dark {
-    color: text-color;
-  }
-  body,
-  html.dark body,
-  .app-columns-container,
-  html.dark .app-columns-container,
-  .app-content,
-  html.dark .app-content,
-  .mdl,
-  html.dark .mdl {
-    background-color: bg-color;
-  }
-  
-  /* Background Options */
-  .app-columns-container {
-    background-image: bg-image;
-    background-position: bg-position;
-    background-size: bg-fit;
-    if !bg-repeat {
-      background-repeat: no-repeat;
-    }
-  }
+	html,
+	html.dark {
+		color: text-color;
+	}
+	body,
+	html.dark body,
+	.app-columns-container,
+	html.dark .app-columns-container,
+	.app-content,
+	html.dark .app-content,
+	.mdl,
+	html.dark .mdl {
+		background-color: bg-color;
+	}
+	
+	/* Background Options */
+	.app-columns-container {
+		background-image: bg-image;
+		background-position: bg-position;
+		background-size: bg-fit;
+		if !bg-repeat {
+			background-repeat: no-repeat;
+		}
+	}
 
-  /* Not Background Related */
-  .frm,
-  html.dark .frm,
-  .column-header,
-  html.dark .column-header,
-  .column-header-temp,
-  html.dark .column-header-temp,
-  .prf-stats a strong, 
-  .column-title-back,
-  button.Button--link,
-  html.dark button.Button--link,
-  .list-link,
-  html.dark .is-inverted-dark .list-link {
-    color: text-color;
-  }
-  .txt-mute,
-  html.dark .txt-mute,
-  .txt-mute-text-only,
-  html.dark .txt-mute-text-only,
-  .txt-mute a:not(:hover):not(:focus),
-  html.dark .txt-mute a:not(:hover):not(:focus),
-  .other-replies,
-  html.dark .other-replies,
-  .prf-stats a {
-    color: sub-text;
-  }
-  .mdl-content,
-  html.dark .mdl-content,
-  .mdl-col-settings,
-  html.dark .mdl-col-settings,
-  .column-header,
-  html.dark .column-header,
-  .detail-view-inline,
-  html.dark .detail-view-inline,
-  .stream-item,
-  html.dark .stream-item,
-  .facet-type,
-  html.dark .facet-type,
-  .with-column-divider-bottom,
-  html.dark .with-column-divider-bottom,
-  .tweet-stats,
-  html.dark .tweet-stats,
-  .tweet-detail-actions,
-  html.dark .tweet-detail-actions,
-  .detail-view-inline,
-  html.dark .detail-view-inline,
-  .accordion-divider-t,
-  html.dark .accordion-divider-t, 
-  .quoted-tweet,
-  html.dark .quoted-tweet,
-  .prf-meta, 
-  .prf-stats li+li a {
-    border-color: bord-color;
-  }
-  .divider-bar,
-  html.dark .divider-bar {
-    background-color: bord-color;
-  }
-  .column,
-  html.dark .column, 
-  .is-narrow-columns .column,
-  html.dark .is-narrow-columns .column,
-  .is-wide-columns .column,
-  html.dark .is-wide-columns .column {
-    width: column-width-desired;
-    min-width: column-width-min;
-    background-color: column-bg;
-  }
-  .scroll-conversation,
-  html.dark .scroll-conversation,
-  .detail-view-inline,
-  html.dark .detail-view-inline
-  .tweet-detail-wrapper,
-  html.dark .tweet-detail-wrapper,
-  .stream-item,
-  html.dark .stream-item,
-  .mdl-col-settings,
-  html.dark .mdl-col-settings,
-  .prf-meta{
-    background-color: column-bg;
-  }
-  .column-nav-item,
-  html.dark .column-nav-item,
-  .app-navigator,
-  html.dark .app-navigator,
-  .app-title,
-  html.dark .app-title,
-  .column-header,
-  html.dark .column-header,
-  .column-message,
-  html.dark .column-message,
-  .column-options,
-  html.dark .column-options,
-  .column-options .button-tray,
-  html.dark .column-options .button-tray,
-  .app-header,
-  html.dark .app-header
-  .facet-type.is-active
-  html.dark .facet-type.is-active,
-  .bg-color-twitter-lightest-gray,
-  html.dark .bg-color-twitter-lightest-gray,
-  .social-proof-container {
-    background-color: header-bg;
-  }
-  .account-link,
-  html.dark .account-link {
-    color: user-color;
-  }
-  
-  /* Accent Colors */
-  a,
-  html.dark a,
-  a:active,
-  html.dark a:active,
-  a:focus,
-  html.dark a:focus,
-  a:hover,
-  html.dark a:hover
-  .app-nav-link,
-  html.dark .app-nav-link,
-  .app-nav-tab,
-  html.dark .app-nav-tab,
-  .app-search-fake,
-  html.dark .app-search-fake,
-  .color-twitter-blue,
-  html.dark .color-twitter-blue,
-  .column-header-link,
-  html.dark .column-header-link,
-  .other-replies-link,
-  html.dark .other-replies-link,
-  .facet-subtitle,
-  html.dark .facet-subtitle {
-    color: accent-color;
-  }
-  .is-condensed .tweet-button,
-  html.dark .is-condensed .tweet-button,
-  .btn-on-blue,
-  html.dark .btn-on-blue,
-  .dropdown-menu .is-selected,
-  html.dark .dropdown-menu .is-selected,
-  .lst-group .selected,
-  html.dark .lst-group .selected,
-  button.Button--primary,
-  html.dark button.Button--primary {
-    background-color: accent-color;
-  }
-  .is-condensed .tweet-button,
-  html.dark .is-condensed .tweet-button,
-  .app-search-fake,
-  html.dark .app-search-fake,
-  button.Button--primary,
-  html.dark button.Button--primary {
-    border-color: accent-color;
-  }
-  .column.is-focused {
-    box-shadow: 0 0 0 5px accent-color !important;
-    transition: box-shadow .25s ease-in-out 0s;
-  }
-  
-  /* Webkit Scrollbars */
-  .scroll-styled-h::-webkit-scrollbar-thumb,
-  .scroll-styled-v::-webkit-scrollbar-thumb,
-  html.dark .scroll-styled-h::-webkit-scrollbar-thumb,
-  html.dark .scroll-styled-v::-webkit-scrollbar-thumb {
-    background-color: accent-color;
-  }
-  .scroll-styled-h::-webkit-scrollbar-thumb:hover,
-  .scroll-styled-v::-webkit-scrollbar-thumb:hover,
-  html.dark .scroll-styled-h::-webkit-scrollbar-thumb:hover,
-  html.dark .scroll-styled-v::-webkit-scrollbar-thumb:hover {
-    background-color: compose-bg;
-  }
-  .scroll-styled-h::-webkit-scrollbar-track,
-  .scroll-styled-v::-webkit-scrollbar-track,
-  html.dark .scroll-styled-h::-webkit-scrollbar-track,
-  html.dark .scroll-styled-v::-webkit-scrollbar-track {
-    border-color: bord-color;
-  }
-  
-  /* Compose Tweet */
-  .is-condensed .tweet-button:hover,
-  html.dark .is-condensed .tweet-button:hover
-  button.Button--primary:hover,
-  html.dark button.Button--primary:hover {
-    border-color: compose-bg;
-    background-color: compose-bg;
-  }
-  .compose,
-  html.dark .compose,
-  button.btn-bg-positive,
-  html.dark button.btn-bg-positive,
-  button.btn-bg-positive:hover,
-  html.dark button.btn-bg-positive:hover {
-    background-color: compose-bg;
-  }
-  .attach-compose-buttons .tweet-button,
-  html.dark .attach-compose-buttons .tweet-button {
-    background-color: compose-bg !important;
-  }
-  html.dark .is-options-open .column-settings-link {
-    color: compose-bg;
-  }
+	/* Not Background Related */
+	.frm,
+	html.dark .frm,
+	.column-header,
+	html.dark .column-header,
+	.column-header-temp,
+	html.dark .column-header-temp,
+	.prf-stats a strong,
+	html.dark .prf-stats a strong,
+	.column-title-back,
+	button.Button--link,
+	html.dark button.Button--link,
+	.is-inverted-dark .list-link,
+	html.dark .is-inverted-dark .list-link,
+	.is-inverted-dark,
+	html.dark .is-inverted-dark,
+	.tweet-stat, 
+	html.dark .tweet-stat,
+	.dropdown-menu a:not(:hover):not(:focus)
+	html.dark .dropdown-menu a:not(:hover):not(:focus),
+	.color-twitter-dark-black,
+	html.dark .color-twitter-dark-black,
+	.accordion .is-active,
+	html.dark .is-inverted-dark .accordion .is-active {
+		color: text-color;
+	}
+	.text-like-keyboard-key {
+		color: #000;
+	}
+	.txt-mute,
+	html.dark .txt-mute,
+	.txt-mute-text-only,
+	html.dark .txt-mute-text-only,
+	.txt-mute a:not(:hover):not(:focus),
+	html.dark .txt-mute a:not(:hover):not(:focus),
+	.other-replies,
+	html.dark .other-replies,
+	.prf-stats a,
+	html.dark .prf-stats a,
+	.list-account .username,
+	html.dark .list-account .username,
+	.color-twitter-darker-gray,
+	html.dark .color-twitter-darker-gray {
+		color: sub-text;
+	}
+	.quoted-tweet {
+		color: quote-text;
+	}
+	.mdl-content,
+	html.dark .mdl-content,
+	.mdl-col-settings,
+	html.dark .mdl-col-settings,
+	.column-header,
+	html.dark .column-header,
+	.detail-view-inline,
+	html.dark .detail-view-inline,
+	.stream-item,
+	html.dark .stream-item,
+	.facet-type,
+	html.dark .facet-type,
+	.with-column-divider-bottom,
+	html.dark .with-column-divider-bottom,
+	.tweet-stats,
+	html.dark .tweet-stats,
+	.tweet-detail-actions,
+	html.dark .tweet-detail-actions,
+	.detail-view-inline,
+	html.dark .detail-view-inline,
+	.accordion-divider-t,
+	html.dark .accordion-divider-t, 
+	.quoted-tweet,
+	html.dark .quoted-tweet,
+	.prf-meta,
+	html.dark .prf-meta,
+	.prf-stats li+li a,
+	html.dark .prf-stats li+li a,
+	.column-header-temp,
+	html.dark .column-header-temp,
+	.is-inverted-dark .stream-item:not(.conversation-event),
+	html.dark .is-inverted-dark .stream-item:not(.conversation-event),
+	.mdl-column-rhs,
+	html.dark .mdl-column-rhs,
+	.mdl-header-divider,
+	html.dark .mdl-header-divider,
+	.account-settings-bb
+	html.dark .account-settings-bb,
+	.join-team
+	html.dark .join-team,
+	.compose-header,
+	html.dark .compose-header {
+		border-color: bord-color;
+	}
+	.divider-bar,
+	html.dark .divider-bar {
+		background-color: bord-color;
+	}
+	.column,
+	html.dark .column, 
+	.is-narrow-columns .column,
+	html.dark .is-narrow-columns .column,
+	.is-wide-columns .column,
+	html.dark .is-wide-columns .column {
+		width: column-width-desired;
+		min-width: column-width-min;
+		background-color: column-bg;
+	}
+	html.dark .caret-inner {
+		border-bottom-color: column-bg;
+	}
+	html.dark .bs-1 {
+		box-shadow: 0 0 14px #000;
+	}
+	#open-modal > div > div > div > div.js-med-tweet.med-tweet > div {
+		background-color: #0000;
+	}
+	.scroll-conversation,
+	html.dark .scroll-conversation,
+	.detail-view-inline,
+	html.dark .detail-view-inline
+	.tweet-detail-wrapper,
+	html.dark .tweet-detail-wrapper,
+	.stream-item,
+	html.dark .stream-item,
+	.mdl-col-settings,
+	html.dark .mdl-col-settings,
+	.prf-meta,
+	html.dark .prf-meta,
+	.item-box,
+	html.dark .item-box,
+	.bg-color-twitter-white, 
+	html.dark .bg-color-twitter-white {
+		background-color: column-bg;
+	}
+	.overlay,
+	.ovl,
+	html.dark .overlay,
+	html.dark .ovl {
+		background-color: overlay-bg;
+	}
+	.column-nav-item,
+	html.dark .column-nav-item,
+	.app-navigator,
+	html.dark .app-navigator,
+	.app-title,
+	html.dark .app-title,
+	.column-header,
+	html.dark .column-header,
+	.column-message,
+	html.dark .column-message,
+	.column-options,
+	html.dark .column-options,
+	.column-options .button-tray,
+	html.dark .column-options .button-tray,
+	.app-header,
+	html.dark .app-header
+	.facet-type.is-active
+	html.dark .facet-type.is-active,
+	.bg-color-twitter-lightest-gray,
+	html.dark .bg-color-twitter-lightest-gray,
+	.social-proof-container,
+	html.dark .social-proof-container,
+	.mdl-column-med
+	html.dark .mdl-column-med {
+		background-color: header-bg;
+	}
+	.account-link,
+	html.dark .account-link,
+	.list-account .fullname,
+	html.dark .list-account .fullname,
+	.is-inverted-dark .account-link,
+	html.dark .is-inverted-dark .account-link,
+	.non-selectable-item
+	html.dark .non-selectable-item {
+		color: user-color;
+	}
+	.list-account .fullname,
+	html.dark .list-account .fullname,
+	.list-account .username,
+	html.dark .list-account .username {
+		text-shadow: none;
+	}
+	.list-account:hover,
+	.list-account:hover:hover,
+	html.dark .list-account:hover:hover {
+		background-color: compose-bg;
+	}
+	.tweetdeck-logo,
+	html.dark .tweetdeck-logo {
+		if pride-logo {
+			background-image: url('https://ton.twimg.com/tweetdeck-web/web/assets/global/tweetdeck-pride.063ab8c85c.svg');
+			background-size: cover;
+			background-position: 0 0;
+			background-repeat: no-repeat;
+		}
+	}
+
+	/* Accent Colors */
+	a,
+	html.dark a,
+	a:active,
+	html.dark a:active,
+	a:focus,
+	html.dark a:focus,
+	a:hover,
+	html.dark a:hover
+	.app-nav-link,
+	html.dark .app-nav-link,
+	.app-nav-tab,
+	html.dark .app-nav-tab,
+	.app-search-fake,
+	html.dark .app-search-fake,
+	.color-twitter-blue,
+	html.dark .color-twitter-blue,
+	.column-header-link,
+	html.dark .column-header-link,
+	.other-replies-link,
+	html.dark .other-replies-link,
+	.facet-subtitle,
+	html.dark .facet-subtitle,
+	.other-replies-link:hover,
+	html.dark .other-replies-link:hover {
+		color: accent-color;
+	}
+	.is-condensed .tweet-button,
+	html.dark .is-condensed .tweet-button,
+	.btn-on-blue,
+	html.dark .btn-on-blue,
+	.dropdown-menu .is-selected,
+	html.dark .dropdown-menu .is-selected,
+	.lst-group .selected,
+	html.dark .lst-group .selected,
+	button.Button--primary,
+	html.dark button.Button--primary {
+		background-color: accent-color;
+	}
+	.is-condensed .tweet-button,
+	html.dark .is-condensed .tweet-button,
+	.app-search-fake,
+	html.dark .app-search-fake,
+	button.Button--primary,
+	html.dark button.Button--primary {
+		border-color: accent-color;
+	}
+	.column.is-focused {
+		box-shadow: 0 0 0 5px accent-color !important;
+		transition: box-shadow .25s ease-in-out 0s;
+	}
+	
+	/* Webkit Scrollbars */
+	.scroll-styled-h::-webkit-scrollbar-thumb,
+	.scroll-styled-v::-webkit-scrollbar-thumb,
+	html.dark .scroll-styled-h::-webkit-scrollbar-thumb,
+	html.dark .scroll-styled-v::-webkit-scrollbar-thumb,
+	.scroll-alt::-webkit-scrollbar-thumb,
+	html.dark .is-inverted-dark .column-scroller::-webkit-scrollbar-thumb {
+		background-color: accent-color;
+	}
+	.scroll-styled-h::-webkit-scrollbar-thumb:hover,
+	.scroll-styled-v::-webkit-scrollbar-thumb:hover,
+	html.dark .scroll-styled-h::-webkit-scrollbar-thumb:hover,
+	html.dark .scroll-styled-v::-webkit-scrollbar-thumb:hover, 
+	html.dark .is-inverted-dark .column-scroller::-webkit-scrollbar-thumb:hover {
+		background-color: compose-bg;
+	}
+	.scroll-styled-h::-webkit-scrollbar-track,
+	.scroll-styled-v::-webkit-scrollbar-track,
+	html.dark .scroll-styled-h::-webkit-scrollbar-track,
+	html.dark .scroll-styled-v::-webkit-scrollbar-track,
+	.scroll-alt::-webkit-scrollbar-track,
+	html.dark .is-inverted-dark .column-scroller::-webkit-scrollbar-track {
+		border-color: bord-color;
+	}
+	html.dark .is-inverted-dark .column-scroller::-webkit-scrollbar-track,
+	.column-background-fill {
+		background-color: column-bg;
+	}
+	
+	/* Compose Tweet */
+	.is-condensed .tweet-button:hover,
+	html.dark .is-condensed .tweet-button:hover
+	button.Button--primary:hover,
+	html.dark button.Button--primary:hover {
+		border-color: compose-bg;
+		background-color: compose-bg;
+	}
+	.compose,
+	html.dark .compose,
+	button.btn-bg-positive,
+	html.dark button.btn-bg-positive,
+	button.btn-bg-positive:hover,
+	html.dark button.btn-bg-positive:hover {
+		background-color: compose-bg;
+	}
+	.attach-compose-buttons .tweet-button,
+	html.dark .attach-compose-buttons .tweet-button {
+		background-color: compose-bg !important;
+	}
+	html.dark .is-options-open .column-settings-link {
+		color: compose-bg;
+	}
+	
+	/* Experimental Features */
+	.ovl {
+		if experimental {
+			backdrop-filter: blur(5px) contrast(60%);
+		}
+	}
 }
