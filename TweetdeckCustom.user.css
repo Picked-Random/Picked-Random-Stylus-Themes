@@ -2,7 +2,7 @@
 @name	Tweetdeck Custom
 @namespace	github.com/Picked-Random/
 @homepageURL	https://github.com/Picked-Random/Picked-Random-Stylus-Themes
-@version	0.3.0
+@version	0.3.1
 @description	A customizable Tweetdeck theme
 @author	Picked Random
 @license	MIT
@@ -78,7 +78,13 @@
 	.color-twitter-dark-black,
 	html.dark .color-twitter-dark-black,
 	.accordion .is-active,
-	html.dark .is-inverted-dark .accordion .is-active {
+	html.dark .is-inverted-dark .accordion .is-active,
+ 	.lst-launcher a:active>span,
+ 	html.dark .lst-launcher a:active>span,
+	.lst-launcher a:focus>span,
+	html.dark .lst-launcher a:focus>span,
+	.lst-launcher a:hover>span
+	html.dark .lst-launcher a:hover>span {
 		color: text-color;
 	}
 	.text-like-keyboard-key {
