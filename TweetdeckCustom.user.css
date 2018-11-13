@@ -2,7 +2,7 @@
 @name	Tweetdeck Custom
 @namespace	github.com/Picked-Random/
 @homepageURL	https://github.com/Picked-Random/Picked-Random-Stylus-Themes
-@version	0.3.1
+@version	0.3.2
 @description	A customizable Tweetdeck theme
 @author	Picked Random
 @license	MIT
@@ -73,8 +73,6 @@
 	html.dark .is-inverted-dark,
 	.tweet-stat, 
 	html.dark .tweet-stat,
-	.dropdown-menu a:not(:hover):not(:focus)
-	html.dark .dropdown-menu a:not(:hover):not(:focus),
 	.color-twitter-dark-black,
 	html.dark .color-twitter-dark-black,
 	.accordion .is-active,
@@ -87,8 +85,12 @@
 	html.dark .lst-launcher a:hover>span {
 		color: text-color;
 	}
+	.dropdown-menu a:not(:hover):not(:focus)
+	html.dark .dropdown-menu a:not(:hover):not(:focus),
+	.non-selectable-item,
+	html.dark .non-selectable-item,
 	.text-like-keyboard-key {
-		color: #000;
+		color: #000 !important;
 	}
 	.txt-mute,
 	html.dark .txt-mute,
@@ -165,6 +167,11 @@
 	html.dark .is-wide-columns .column {
 		width: column-width-desired;
 		min-width: column-width-min;
+		background-color: column-bg;
+	}
+	html.dark .column-scroller,
+  html.dark .column-header,
+	html.dark .column-header-temp {
 		background-color: column-bg;
 	}
 	html.dark .caret-inner {
@@ -361,7 +368,12 @@
 	html.dark .is-options-open .column-settings-link {
 		color: compose-bg;
 	}
-	
+
+	.l-fullheight
+	html.dark .l-fullheight {
+		overflow: hidden;	
+	}
+
 	/* Experimental Features */
 	.ovl {
 		if experimental {
