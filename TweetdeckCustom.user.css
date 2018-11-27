@@ -1,20 +1,22 @@
 /* ==UserStyle==
-@name	Tweetdeck Custom
-@namespace	github.com/Picked-Random/
-@homepageURL	https://github.com/Picked-Random/Picked-Random-Stylus-Themes
-@version	0.3.2
-@description	A customizable Tweetdeck theme
-@author	Picked Random
-@license	MIT
-@preprocessor	stylus
+@name         Tweetdeck Custom
+@namespace    github.com/Picked-Random/
+@homepageURL  https://github.com/Picked-Random/Picked-Random-Stylus-Themes
+@version      0.3.3
+@description  A customizable Tweetdeck theme
+@author       Picked Random
+@license      MIT
+@preprocessor stylus
 
 @var text column-width-desired "Column Width" 27%
 @var text column-width-min "Column Width Minimum" 310px
+
 @var color bg-color "Background Color" #000
 @var text bg-image "Background Image" url("")
 @var select bg-fit "Background Image Cover" ["auto", "cover, contain", "contain"]
 @var select bg-position "Background Image Position" ["top left", "left", "bottom left", "bottom", "bottom right", "right", "top right", "top", "center"]
 @var checkbox bg-repeat "Background Image Repeat" 0
+
 @var color column-bg "Column Background" #222
 @var color header-bg "Header Color" #333
 @var color overlay-bg "Overlay Color" #292f33e6
@@ -25,6 +27,7 @@
 @var color accent-color "Accent Color" #1da1f2
 @var color compose-bg "Secondary Accent" #2b7bb9
 @var color bord-color "Border Color" #000
+
 @var checkbox experimental "Enable Overlay Blur (Chrome Experimental Flag Required)" 0
 @var checkbox pride-logo "Enable Rainbow Icon" 0
 ==/UserStyle== */
@@ -44,7 +47,7 @@
 	html.dark .mdl {
 		background-color: bg-color;
 	}
-	
+
 	/* Background Options */
 	.app-columns-container {
 		background-image: bg-image;
@@ -170,8 +173,9 @@
 		background-color: column-bg;
 	}
 	html.dark .column-scroller,
-  html.dark .column-header,
-	html.dark .column-header-temp {
+	html.dark .column-header,
+	html.dark .column-header-temp,
+	.column-panel {
 		background-color: column-bg;
 	}
 	html.dark .caret-inner {
@@ -315,7 +319,7 @@
 		box-shadow: 0 0 0 5px accent-color !important;
 		transition: box-shadow .25s ease-in-out 0s;
 	}
-	
+
 	/* Webkit Scrollbars */
 	.scroll-styled-h::-webkit-scrollbar-thumb,
 	.scroll-styled-v::-webkit-scrollbar-thumb,
@@ -344,7 +348,7 @@
 	.column-background-fill {
 		background-color: column-bg;
 	}
-	
+
 	/* Compose Tweet */
 	.is-condensed .tweet-button:hover,
 	html.dark .is-condensed .tweet-button:hover
@@ -368,10 +372,37 @@
 	html.dark .is-options-open .column-settings-link {
 		color: compose-bg;
 	}
-
 	.l-fullheight
 	html.dark .l-fullheight {
 		overflow: hidden;	
+	}
+
+	/* Fixing Browser Font Size */
+	html.dark .txt-size--12,
+	.txt-size--12 {
+		font-size: 0.75em !important;
+	}
+	html.dark .txt-size--13,
+	.txt-size--13 {
+		font-size: 0.8125em !important;
+	}
+	html.dark .txt-size--14,
+	.txt-size--14 {
+		font-size: 0.875em !important;
+	}
+	html.dark .txt-size--15,
+	.txt-size--15 {
+		font-size: 0.9375em !important;
+	}
+	html.dark .txt-size--16,
+	.txt-size--16 {
+		font-size: 1em !important;
+	}
+
+	/* Adaptive Settings Panel */
+	.mdl.s-short,
+	html.dark .mdl.s-short {
+		height: 80%;
 	}
 
 	/* Experimental Features */
