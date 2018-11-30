@@ -1,0 +1,184 @@
+/* ==UserStyle==
+@name         Dark Stylus Theme
+@namespace    https://github.com/Picked-Random
+@homepageURL  https://github.com/Picked-Random/Picked-Random-Stylus-Themes
+@version      0.1.0
+@description  Custom dark theme for Stylus. Use the built-in themes for the editor.
+@author       Picked Random
+@license      MIT
+@preprocessor stylus
+
+@var number popupWidth   "Pop-up Width (Pixels)"  [246, 200, 500, 1]
+@var number sidebarWidth "Sidebar Width (Pixels)" [280, 200, 500, 1]
+==/UserStyle== */
+@-moz-document regexp("chrome-extension://.*") {
+    :root {
+        --header-width: (sidebarWidth)px;
+    }
+    body {
+        background-color: #222;
+        color: #fff;
+        font-size: 0.75rem;
+    }
+    /* Sidebar */
+    #header {
+        background-color: #444;
+        background-image: linear-gradient(270deg, #222, 15%, #444);
+        border-right: 1px solid #000;
+        overflow-x: hidden;
+        width: var(--header-width);
+    }
+    #sections {
+        padding-left: var(--header-width);
+    }
+    .filter-selection {
+        margin-bottom: 4px;
+    }
+    .filter-selection select {
+        background-image: none;
+        background-color: transparent;
+    }
+    .filter-selection option {
+        background-color: #555;
+    }
+    select,
+    #manage\.newUI\.sort {
+        border-radius: 8px;
+        background-color: #555;
+        background-image: linear-gradient(0deg, #0007, 20%, #0000);
+        color: #fff;
+        border: 1px solid #000;
+    }
+    select option:nth-child(odd) {
+        background-color: #444;
+    }
+    input[type="number"],
+    #name,
+    #search,
+    input[type="text"] {
+        background-color: #666;
+        background-image: linear-gradient(0deg, #0007, 20%, #0000);
+        border: 1px solid #777;
+        border-radius: 8px;
+        color: #fff;
+        padding-left: 5px;
+    }
+    input::placeholder {
+        color: #aaa;
+    }
+    button {
+        border: 1px solid #222;
+        border-radius: 4px;
+        background-color: #066;
+        background-image: linear-gradient(0deg, #000b, 20%, #0000);
+        color: #fff;
+        font-size: 0.8125rem;
+    }
+    button:disabled {
+        background-color: #044;
+    }
+    button:not(:disabled):hover,
+    #message-box-buttons button:not(:disabled):hover {
+        background-color: #099;
+        cursor: pointer;
+    }
+    #header a {
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+    #header a:hover {
+        color: #aaa;
+        text-decoration: underline;
+    }
+    input[type="checkbox"]:not(.slider) {
+        background-color: #fff;
+    }
+    .beautify-options select option {
+        background-color: #666;
+    }
+
+    /* Style List */
+    .newUI .style-name {
+        font-size: 0.875rem;
+    }
+    .style-name a {
+        color: #fff;
+        transition: color 0.2s;
+    }
+    .newUI .entry.enabled .style-name:hover .style-name-link {
+        color: #7af;
+    }
+    .newUI .entry .style-name:hover::before {
+        background-image: linear-gradient(90deg, #666, 15%, #0000, 40%, #0000);
+        z-index: -1;
+    }
+    .newUI .target {
+        color: #aaa;
+        margin-left: 28px;
+    }
+    .newUI .updater-icons > :not(.check-update):after {
+        background-color: #066;
+        border-color: #022;
+        z-index: 4;
+    }
+
+    /* Message Box */
+    #message-box > div,
+    #help-popup {
+        background-color: #222;
+        border: 1px solid #444;
+        border-radius: 8px;
+        box-shadow: 0 0 30px #000;
+        overflow: hidden;
+    }
+    #message-box-buttons {
+        background-color: #333;
+    }
+    #message-box-title {
+        background-color: #055;
+    }
+
+    /* Extension Popup */
+    #stylus-popup {
+        width: (popupWidth)px !important;
+    }
+    #stylus-popup a {
+        color: #fff;
+    }
+    #disable-all-wrapper .main-controls label {
+        font-size: 0.75rem;
+    }
+    .search-result {
+        background-color: #333;
+        padding-bottom: 1.3rem;
+        transition: background-color 0.2s, border-color 0.2s;
+    }
+    .search-result:hover {
+        background-color: #555;
+    }
+    .search-result-meta {
+        background-color: #444;
+        transition: background-color 0.2s;
+    }
+    .search-result:hover .search-result-meta {
+        background-color: #666;
+    }
+    .search-result-title span {
+        font-size: 0.75rem;
+    }
+    .search-result-meta [data-type="rating"][data-class="good"] dd {
+        color: #0c0;
+    }
+    .search-result-meta [data-type="rating"][data-class="okay"] dd {
+        color: #cc0;
+    }
+    .search-result-meta [data-type="rating"][data-class="bad"] dd {
+        color: #c00;
+    }
+
+    /* Editor */
+    .CodeMirror pre {
+        font-size: 1em;
+    }
+}
