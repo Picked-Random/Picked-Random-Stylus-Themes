@@ -2,7 +2,7 @@
 @name         Dark Stylus Theme
 @namespace    https://github.com/Picked-Random
 @homepageURL  https://github.com/Picked-Random/Picked-Random-Stylus-Themes
-@version      0.1.0
+@version      0.1.1
 @description  Custom dark theme for Stylus. Use the built-in themes for the editor.
 @author       Picked Random
 @license      MIT
@@ -180,5 +180,9 @@
     /* Editor */
     .CodeMirror pre {
         font-size: 1em;
+    }
+    #search-replace-dialog textarea {
+        background-color: #666;
+        background-image: linear-gradient(0deg, #0007, 20%, #0000);
     }
 }
