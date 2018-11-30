@@ -8,3 +8,4 @@ A collection of themes I've made for Stylus.
 2. Install the theme of your choosing:
   - [RetroAchievements ReWorked](https://raw.githubusercontent.com/Picked-Random/test/master/RetroAchievementsTheme.user.css)
   - [Tweetdeck Custom](https://raw.githubusercontent.com/Picked-Random/Picked-Random-Stylus-Themes/master/TweetdeckCustom.user.css)
+  - [Dark Stylus Theme](https://raw.githubusercontent.com/Picked-Random/Picked-Random-Stylus-Themes/master/DarkStylusTheme.user.css)
