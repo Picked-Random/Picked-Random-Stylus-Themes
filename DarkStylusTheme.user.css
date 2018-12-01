@@ -2,7 +2,7 @@
 @name         Dark Stylus Theme
 @namespace    https://github.com/Picked-Random
 @homepageURL  https://github.com/Picked-Random/Picked-Random-Stylus-Themes
-@version      0.1.1
+@version      0.1.2
 @description  Custom dark theme for Stylus. Use the built-in themes for the editor.
 @author       Picked Random
 @license      MIT
@@ -138,6 +138,9 @@
     #message-box-title {
         background-color: #055;
     }
+		#confirm > div {
+			background-color: #222;
+		}
 
     /* Extension Popup */
     #stylus-popup {
