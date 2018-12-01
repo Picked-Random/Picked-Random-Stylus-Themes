@@ -1,218 +1,255 @@
 /* ==UserStyle==
-@name           RetroAchievements ReWorked
-@namespace      github.com/Picked-Random/
-@homepageURL    https://github.com/Picked-Random/Picked-Random-Stylus-Themes
-@version        0.9.3
-@description    A more modern appearance for RetroAchievements
-@author         Picked Random
-@license        Unlicense
-@preprocessor   stylus
+@name         RetroAchievements ReWorked
+@namespace    https://github.com/Picked-Random
+@homepageURL  https://github.com/Picked-Random/Picked-Random-Stylus-Themes
+@version      0.9.4
+@description  A more modern appearance for RetroAchievements
+@author       Picked Random
+@license      MIT
+@preprocessor stylus
 
-@var checkbox sticky-header "Sticky Header" 1
-@var select text-font "Website Font" ["Verdana", "Open Sans", "Rosario", "Arial"]
-@var color text-color "Text Color / Accent Color" #2c97fa
-@var color link-color "Link Color" #c90
-@var color background-usercolor "Background Color" #000
+@var checkbox stickyHeader    "Sticky Header" 1
+@var select   textFont        "Website Font" ["Verdana", "Open Sans", "Rosario", "Arial"]
+@var color    textColor       "Text Color / Accent Color" #2c97fa
+@var color    linkColor       "Link Color" #c90
+@var color    backgroundColor "Background Color" #000
 ==/UserStyle== */
+
 @-moz-document domain("retroachievements.org") {
-  body {
-    background-color: background-usercolor;
-    color: text-color;
-    font-family: text-font, sans-serif;
-  }
-  a {
-    color: link-color;
-  }
-  /* Header */
-  #topborder {
-    if not sticky-header {
-      display: none;
-    }
-  }
-  .login {
-    position: relative;
-    width: 350px;
-  }
-  .login p {
-    margin: 0px;
-  }
-  .login .userpic {
-    border-radius: 4px;
-    border: 2px solid;
-  }
-  #themeselect {
-    position: relative;
-    bottom: 60px;
-    right: 295px;
-    background-color: #1a1a1a;
-    border: 2px solid #141414;
-    border-radius: 8px;
-    color: link-color;
-  }
-  #themeselect option[value="/css/rac_green.css"],
-  #themeselect option[value="/css/rac_red.css"],
-  #themeselect option[value="/css/rac_spooky.css"] {
-    display: none;
-  }
-  #title {
-    if sticky-header {
-      position: fixed;
-    }
-    min-width: 800px;
-    max-width: none;
-    width: 100%;
-    height: 108px;
-    top: 0px;
+	body {
+		background-color: backgroundColor;
+		color: textColor;
+		font-family: textFont, sans-serif;
+	}
+	a {
+		color: linkColor;
+	}
+	h1, h2, h3, h4 {
+		border-bottom: 3px dotted textColor;
+	}
+
+	/* Header */
+	#topborder {
+		display: none;
+	}
+	#title {
+		margin: 0;
+		max-width: none;
+		min-width: 800px;
+		overflow: hidden;
+		top: 0;
+		width: 100%;
     z-index: 500;
-  }
-  /* Navbar */
-  #innermenu {
-    if sticky-header {
-      position: fixed;
-      top: 108px;
-    }
-    max-width: none;
-    width: 100%;
-    background: linear-gradient(0deg, #141414, #2a2a2a);
-  }
-  .searchboxinput {
-    background-color: #1a1a1a;
-    border: 2px solid #141414;
-    color: text-color;
-    border-radius: 8px;
-    padding-left: 3px;
-    padding-right: 3px;
-    transition: width 0.5s, background-color 0.5s;
-    width: 110px;
-  }
-  .searchboxinput:focus {
-    background-color: #121212;
-    width: 180px;
-  }
-  .searchbox input[type="submit"] {
-    color: text-color;
-    background-color: #424242;
-    border: 2px solid #141414;
-    border-radius: 8px;
-    padding-left: 3px;
-    padding-right: 3px;
-  }
-  #innermenu ul li a {
-    background-image: none;
-    transition: background-color 0.15s, color 0.15s;
-  }
-  #innermenu ul li:hover a {
-    background-image: none;
-    background-color: #fff1;
-  }
-  #innermenu ul li:hover a[href="#"] {
-    cursor: default;
-  }
-  #innermenu ul li ul {
-    background-color: #5a5a5a;
-    background-image: none !important;
-    border-radius: 8px;
-    padding-bottom: 8px !important;
-    width: 153px !important;
-  }
-  #innermenu ul li ul li {
-    margin-bottom: 6px;
-    background-color: transparent;
-  }
-  #innermenu ul li ul li a {
-    background-image: none !important;
-    background-color: #5a5a5a !important;
-    margin-bottom: 3px;
-  }
-  #innermenu ul li ul li a:hover {
-    background-color: #787878 !important;
-  }
-  #innermenu ul li ul li a:hover[href="#"] {
-    cursor: pointer;
-  }
-  /* Main Page */
-  #mainpage {
-    max-width: none;
-    if sticky-header {
-      top: 130px;
-    }
-    margin: 6px;
-  }
-  #leftcontainer {
-    margin-right: 400px;
-  }
-  #rightcontainer {
-    width: 350px;
-  }
-  .component {
-    margin-bottom: 8px;
-  }
-  .streamvid {
-    height: 197px;
-  }
-  .streamvid iframe {
-    width: 350px;
-    height: 197px;
-  }
-  #footer {
-    display: none;
-  }
-  /* Achievement Bars */
-  .completionhardcore,
-  .progressbar,
-  .completion {
-    border-radius: 8px;
-  }
-  .progressbar {
-    border: 1px solid #000;
-    background-color: #141414;
-  }
-  /* Achievements */
-  .userpagegames .bb_inline a img {
-    border-radius: 8px;
-    margin: 2px;
-  }
-  /* Profile */
-  .longheader {
-    display: none;
-  }
-  .usersummary {
-    background-color: #3c3c3c;
-    border: 3px solid #000;
-    border-radius: 8px;
-    color: #ddd;
-    margin-top: 15px;
-    padding: 10px;
-  }
-  .usersummary img {
-    border: 3px solid;
-    border-radius: 8px;
-    color: text-color;
-  }
-  .usermotto {
-    width: 50%;
-  }
-  #WzTtDiV .usermotto {
-    width: 80%;
-  }
-  /* Settings */
-  #resetgameselector {
-    width: 60%;
-    max-width: 500px;
-    margin-right: 2px;
-    margin-top: 3px;
-  }
-  #resetachievementscontrol {
-    display: inline;
-  }
-  #resetachievementscontrol + input {
-    display: block;
-    margin-top: 3px;
-  }
-  #resetachievementscontainer {
-    width: 38%;
-    margin-right: 2px;
-    max-width: 300px;
-    margin-top: 3px;
-  }
+		if stickyHeader == 1 {
+			position: fixed;
+		}
+	}
+	#logo {
+		margin: 10px;
+		padding: 0;
+	}
+	/* Login Module */
+	.login {
+		background-color: #1a1a1a;
+		position: relative;
+	}
+	.login p {
+		background-color: #0000;
+		height: 100%;
+		margin: 0;
+	}
+	.login tr:nth-child(odd) {
+		background-color: #0000;
+	}
+	.login a[href="/inbox.php"] {
+		position: absolute;
+		left: 4px;
+		bottom: 2px;
+	}
+	.login a[href^="/logout.php"] {
+		position: absolute;
+		left: 4rem;
+		bottom: 2px;
+	}
+	.login .userpic {
+		border: 2px solid;
+		border-radius: 6px;
+		float: right;
+		margin-left: 10px;
+	}
+	#themeselect {
+		background-color: #1a1a1a;
+		border: 2px solid #141414;
+		border-radius: 8px;
+		color: linkColor;
+		left: -75px;
+		position: absolute;
+		top: -2px;
+	}
+	#themeselect option[value="/css/rac_green.css"],
+	#themeselect option[value="/css/rac_red.css"],
+	#themeselect option[value="/css/rac_spooky.css"] {
+		display: none;
+	}
+	/* Navbar*/
+	#innermenu {
+		background-image: linear-gradient(0deg, #060606, #222, #060606);
+		border-bottom: 2px solid backgroundColor;
+		max-width: none;
+		width: 100%;
+		if stickyHeader == 1 {
+			position: fixed;
+			top: 108px;
+		}
+	}
+	#innermenu ul li a {
+		background-image: none;
+		transition: background-color 0.15s, color 0.15s;
+	}
+	#innermenu ul li a[href="#"] {
+		cursor: default;
+	}
+	#innermenu ul li:hover a {
+		background-image: none;
+		background-color: #fff3;
+	}
+	#innermenu ul li ul {
+		background-color: #5a5a5a;
+		background-image: none !important;
+		border-radius: 8px;
+		padding-bottom: 8px !important;
+	}
+	#innermenu ul li ul li {
+		margin-bottom: 6px;
+		background-color: transparent;
+	}
+	#innermenu ul li ul li a {
+		background-color: #5a5a5a !important;
+	}
+	#innermenu ul li ul li a:hover {
+		background-color: #787878 !important;
+	}
+	#innermenu ul li ul li a[href="#"] {
+		cursor: pointer;
+	}
+	#innermenu ul li:hover ul li a:hover {
+		background-image: none;
+	}
+	/* Search Bar */
+	.searchboxinput {
+		background-color: #070707;
+		border: 2px solid #040404;
+		color: textColor;
+		border-radius: 8px;
+		padding: 3px;
+		transition: width 0.5s, background-color 0.5s;
+		width: 110px;
+	}
+	.searchboxinput:focus {
+		background-color: #111;
+		width: 180px;
+	}
+	.searchbox input[type="submit"] {
+		color: textColor;
+		background-color: #424242;
+		border: 2px solid #262626;
+		border-radius: 8px;
+		padding: 3px;
+	}
+
+	/* Profile */
+	.usersummary img {
+		border: 3px solid textColor;
+		border-radius: 8px;
+	}
+
+	/* Achievements */
+	.progressbar,
+	.completion,
+	.completionhardcore {
+		border-radius: 8px;
+	}
+	.progressbar {
+		border: 1px solid #000;
+		background-color: #141414;
+	}
+	.userpagegames .bb_inline a img {
+		border-radius: 8px;
+		margin: 2px;
+	}
+
+	/* Settings */
+	#resetgameselector {
+		width: 60%;
+		max-width: 500px;
+		margin-right: 2px;
+		margin-top: 3px;
+	}
+	#resetachievementscontrol {
+		display: inline;
+	}
+	#resetachievementscontrol + input {
+		display: block;
+		margin-top: 3px;
+	}
+	#resetachievementscontainer {
+		width: 38%;
+		margin-right: 2px;
+		max-width: 300px;
+		margin-top: 3px;
+	}
+
+	/* Page Layout */
+	#mainpage {
+		margin-top: 3px;
+		max-width: none;
+		width: 90%;
+		padding: 0 10px;
+		if stickyHeader == 1 {
+			margin-top: 155px;
+		}
+	}
+	#leftcontainer {
+		float: left;
+		margin: 0;
+		margin-bottom: 10px;
+		width: 95%;
+	}
+	#rightcontainer {
+		float: left;
+		margin-bottom: 10px;
+		position: static;
+		width: 95%;
+	}
+	@media screen and (min-width: 1153px) {
+		#leftcontainer {
+			width: calc(100% - 445px);
+		}
+		#rightcontainer {
+			float: right;
+			position: static;
+			width: 350px;
+		}
+	}
+
+	/* Footer */
+	#footer {
+		width: 100%;
+		height: 4rem;
+		margin: 0;
+		padding: 10px 0;
+		max-width: none;
+	}
+	.footericonset {
+		margin-left: 10px;
+		width: 600px;
+	}
+	.footericonset p {
+		height: 2rem;
+		background-color: #222;
+		border: 2px solid #000;
+	}
+	.footertext {
+		color: #fff;
+	}
 }
