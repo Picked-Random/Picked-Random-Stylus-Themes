@@ -2,7 +2,7 @@
 @name         Dark Stylus Theme
 @namespace    https://github.com/Picked-Random
 @homepageURL  https://github.com/Picked-Random/Picked-Random-Stylus-Themes
-@version      0.1.2
+@version      0.1.3
 @description  Custom dark theme for Stylus. Use the built-in themes for the editor.
 @author       Picked Random
 @license      MIT
@@ -11,7 +11,7 @@
 @var number popupWidth   "Pop-up Width (Pixels)"  [246, 200, 500, 1]
 @var number sidebarWidth "Sidebar Width (Pixels)" [280, 200, 500, 1]
 ==/UserStyle== */
-@-moz-document regexp("chrome-extension://.*") {
+@-moz-document regexp("chrome-extension://.*"), regexp("moz-extension://.*") {
     :root {
         --header-width: (sidebarWidth)px;
     }
