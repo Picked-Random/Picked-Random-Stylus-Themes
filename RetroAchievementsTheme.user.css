@@ -2,7 +2,7 @@
 @name         RetroAchievements ReWorked
 @namespace    https://github.com/Picked-Random
 @homepageURL  https://github.com/Picked-Random/Picked-Random-Stylus-Themes
-@version      0.9.4
+@version      0.9.5
 @description  A more modern appearance for RetroAchievements
 @author       Picked Random
 @license      MIT
@@ -39,7 +39,7 @@
 		overflow: hidden;
 		top: 0;
 		width: 100%;
-    z-index: 500;
+		z-index: 600;
 		if stickyHeader == 1 {
 			position: fixed;
 		}
