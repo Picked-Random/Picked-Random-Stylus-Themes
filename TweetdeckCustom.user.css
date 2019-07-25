@@ -2,7 +2,7 @@
 @name         Tweetdeck Custom
 @namespace    github.com/Picked-Random/
 @homepageURL  https://github.com/Picked-Random/Picked-Random-Stylus-Themes
-@version      0.3.3
+@version      0.3.4
 @description  A customizable Tweetdeck theme
 @author       Picked Random
 @license      MIT
@@ -10,6 +10,7 @@
 
 @var text column-width-desired "Column Width" 27%
 @var text column-width-min "Column Width Minimum" 310px
+@var text column-padding "Column Gap" 6px
 
 @var color bg-color "Background Color" #000
 @var text bg-image "Background Image" url("")
@@ -28,8 +29,12 @@
 @var color compose-bg "Secondary Accent" #2b7bb9
 @var color bord-color "Border Color" #000
 
-@var checkbox experimental "Enable Overlay Blur (Chrome Experimental Flag Required)" 0
-@var checkbox pride-logo "Enable Rainbow Icon" 0
+@var checkbox experimental "Enable Overlay Blur (Chrome Experimental)" 0
+@var select pride-logo "Enable Rainbow Icon" {
+	"Default" : "0",
+	"Pride Logo 1" : "'https://ton.twimg.com/tweetdeck-web/web/assets/global/tweetdeck-pride.063ab8c85c.svg'",
+	"Pride Logo 2" : "'https://ton.twimg.com/tweetdeck-web/web/assets/global/tweetdeck-pride.5f6bd95f75.svg'",
+}
 ==/UserStyle== */
 
 @-moz-document domain("tweetdeck.twitter.com") {
@@ -59,6 +64,14 @@
 	}
 
 	/* Not Background Related */
+	.dropdown-menu,
+ 	html.dark .dropdown-menu,
+	.popover,
+	html.dark .popover
+	{
+		background-color: column-bg;
+	}
+
 	.frm,
 	html.dark .frm,
 	.column-header,
@@ -171,6 +184,7 @@
 		width: column-width-desired;
 		min-width: column-width-min;
 		background-color: column-bg;
+		margin-right: column-padding;
 	}
 	html.dark .column-scroller,
 	html.dark .column-header,
@@ -180,6 +194,13 @@
 	}
 	html.dark .caret-inner {
 		border-bottom-color: column-bg;
+	}
+	.drawer-header {
+		border-color: bord-color;
+	}
+	.accounts-drawer,
+	html.dark .accounts-drawer {
+		background-color: column-bg !important;
 	}
 	html.dark .bs-1 {
 		box-shadow: 0 0 14px #000;
@@ -202,7 +223,9 @@
 	.item-box,
 	html.dark .item-box,
 	.bg-color-twitter-white, 
-	html.dark .bg-color-twitter-white {
+	html.dark .bg-color-twitter-white,
+	.app-nav-tab.is-selected,
+ 	html.dark .app-nav-tab.is-selected {
 		background-color: column-bg;
 	}
 	.overlay,
@@ -234,7 +257,11 @@
 	.social-proof-container,
 	html.dark .social-proof-container,
 	.mdl-column-med
-	html.dark .mdl-column-med {
+	html.dark .mdl-column-med,
+	.join-team,
+ 	html.dark .join-team,
+	.account-settings-row,
+ 	html.dark .account-settings-row {
 		background-color: header-bg;
 	}
 	.account-link,
@@ -260,12 +287,13 @@
 	}
 	.tweetdeck-logo,
 	html.dark .tweetdeck-logo {
-		if pride-logo {
-			background-image: url('https://ton.twimg.com/tweetdeck-web/web/assets/global/tweetdeck-pride.063ab8c85c.svg');
-			background-size: cover;
-			background-position: 0 0;
-			background-repeat: no-repeat;
+		if (pride-logo != 0)
+		{
+			background-image: url(pride-logo);
 		}
+		background-size: cover;
+		background-position: 0 0;
+		background-repeat: no-repeat;
 	}
 
 	/* Accent Colors */
@@ -320,6 +348,15 @@
 		transition: box-shadow .25s ease-in-out 0s;
 	}
 
+	.app-columns,
+ 	html.dark .app-columns,
+	.is-narrow-columns .app-columns,
+ 	html.dark .is-narrow-columns .app-columns,
+	.is-wide-columns .app-columns,
+ 	html.dark .is-wide-columns .app-columns {
+		padding-left: column-padding;
+	}
+
 	/* Webkit Scrollbars */
 	.scroll-styled-h::-webkit-scrollbar-thumb,
 	.scroll-styled-v::-webkit-scrollbar-thumb,
@@ -347,6 +384,15 @@
 	html.dark .is-inverted-dark .column-scroller::-webkit-scrollbar-track,
 	.column-background-fill {
 		background-color: column-bg;
+	}
+
+	/* Firefox Scrollbars */
+	.scroll-styled-h,
+	.scroll-styled-v,
+	html.dark .scroll-styled-h,
+	html.dark .scroll-styled-v {
+		scrollbar-color: accent-color column-bg;
+		scrollbar-width: scroll-width;
 	}
 
 	/* Compose Tweet */
