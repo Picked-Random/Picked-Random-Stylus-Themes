@@ -2,7 +2,7 @@
 @name         Tweetdeck Custom
 @namespace    github.com/Picked-Random/
 @homepageURL  https://github.com/Picked-Random/Picked-Random-Stylus-Themes
-@version      0.3.4
+@version      0.4
 @description  A customizable Tweetdeck theme
 @author       Picked Random
 @license      MIT
@@ -16,6 +16,7 @@
 @var text bg-image "Background Image" url("")
 @var select bg-fit "Background Image Cover" ["auto", "cover, contain", "contain"]
 @var select bg-position "Background Image Position" ["top left", "left", "bottom left", "bottom", "bottom right", "right", "top right", "top", "center"]
+@var select scroll-width "Scrollbar Width (Firefox)" ["auto", "thin", "none"]
 @var checkbox bg-repeat "Background Image Repeat" 0
 
 @var color column-bg "Column Background" #222
@@ -29,7 +30,7 @@
 @var color compose-bg "Secondary Accent" #2b7bb9
 @var color bord-color "Border Color" #000
 
-@var checkbox experimental "Enable Overlay Blur (Chrome Experimental)" 0
+@var checkbox experimental "Enable Overlay Blur (Requires Config Tweak on Firefox)" 0
 @var select pride-logo "Enable Rainbow Icon" {
 	"Default" : "0",
 	"Pride Logo 1" : "'https://ton.twimg.com/tweetdeck-web/web/assets/global/tweetdeck-pride.063ab8c85c.svg'",
@@ -64,6 +65,12 @@
 	}
 
 	/* Not Background Related */
+
+	/* This is just a little bugfix */
+	html.dark .badge-verified::before {
+		background-position: -163px -48px;
+	}
+
 	.dropdown-menu,
  	html.dark .dropdown-menu,
 	.popover,
@@ -334,6 +341,12 @@
 	button.Button--primary,
 	html.dark button.Button--primary {
 		background-color: accent-color;
+	}
+	.dropdown-menu a:not(:hover):not(:focus),
+	html.dark .dropdown-menu a:not(:hover):not(:focus)
+	.non-selectable-item,
+	html.dark .non-selectable-item {
+		color: text-color !important;
 	}
 	.is-condensed .tweet-button,
 	html.dark .is-condensed .tweet-button,
