@@ -152,6 +152,122 @@
 	.searchbox input[type="submit"] {
 		color: textColor;
 		background-color: #424242;
+/* ==UserStyle==
+@name         RetroAchievements ReWorked
+@namespace    https://github.com/Picked-Random
+@homepageURL  https://github.com/Picked-Random/Picked-Random-Stylus-Themes
+@version      0.9.6
+@description  A more modern appearance for RetroAchievements
+@author       Picked Random
+@license      MIT
+@preprocessor stylus
+
+@var checkbox stickyHeader    "Sticky Header" 1
+@var select   textFont        "Website Font" ["Verdana", "Open Sans"]
+@var color    textColor       "Text Color / Accent Color" #2c97fa
+@var color    linkColor       "Link Color" #c90
+@var color    backgroundColor "Background Color" #000
+==/UserStyle== */
+
+@-moz-document domain("retroachievements.org") {
+	body {
+		background-color: backgroundColor;
+		color: textColor;
+		font-family: textFont, sans-serif;
+	}
+	a {
+		color: linkColor;
+	}
+	h1, h2, h3, h4 {
+		border-bottom: 3px dotted textColor;
+	}
+
+	/* Header */
+	#topborder {
+		display: none;
+	}
+	#title {
+		margin: 0;
+		padding: 0;
+		max-width: none;
+		min-width: 800px;
+		overflow: hidden;
+		top: 0;
+		width: 100%;
+		z-index: 1000;
+		background: #111;
+		if stickyHeader == 1 {
+			position: fixed;
+		}
+	}
+	#logocontainer {
+		margin: 5px 15px;
+	}
+	#logocontainer {
+		margin: 5px 15px;
+	}
+	#logo {
+		margin: 10px;
+		padding: 0;
+	}
+	/* Login Module */
+	.login {
+		background-color: #1a1a1a;
+		position: relative;
+		margin: 5px 15px;
+	}
+	.login p {
+		background-color: #0000;
+		height: 100%;
+		margin: 0;
+	}
+	.login tr:nth-child(odd) {
+		background-color: #0000;
+	}
+	.login a[href="/inbox.php"] {
+		position: absolute;
+		left: 4px;
+		bottom: 2px;
+	}
+	.login a[href^="/logout.php"] {
+		position: absolute;
+		left: 4rem;
+		bottom: 2px;
+	}
+	.login .userpic {
+		border: 2px solid;
+		border-radius: 6px;
+		float: right;
+		margin-left: 10px;
+	}
+	/* Navbar*/
+	#innermenu {
+		background-image: linear-gradient(0deg, #060606, #222, #060606);
+		border-bottom: 2px solid backgroundColor;
+		max-width: none;
+		width: 100%;
+		if stickyHeader == 1 {
+			position: fixed;
+			top: 115px;
+		}
+	}
+	/* Search Bar */
+	.searchboxinput {
+		background-color: #070707;
+		border: 2px solid #040404;
+		color: textColor;
+		border-radius: 8px;
+		padding: 3px;
+		transition: width 0.5s, background-color 0.5s;
+		width: 110px;
+	}
+	.searchboxinput:focus {
+		background-color: #111;
+		width: 180px;
+	}
+	.searchbox input[type="submit"] {
+		color: textColor;
+		background-color: #424242;
 		border: 2px solid #262626;
 		border-radius: 8px;
 		padding: 3px;
@@ -202,42 +318,16 @@
 	/* Page Layout */
 	#mainpage {
 		margin-top: 3px;
-		max-width: none;
-		width: 90%;
 		padding: 0 10px;
 		if stickyHeader == 1 {
-			margin-top: 155px;
+			margin-top: 166px;
 		}
 	}
-	#leftcontainer {
-		float: left;
-		margin: 0;
-		margin-bottom: 10px;
-		width: 95%;
-	}
-	#rightcontainer {
-		float: left;
-		margin-bottom: 10px;
-		position: static;
-		width: 95%;
-	}
-	@media screen and (min-width: 1153px) {
-		#leftcontainer {
-			width: calc(100% - 445px);
-		}
-		#rightcontainer {
-			float: right;
-			position: static;
-			width: 350px;
-		}
-	}
-
 	/* Footer */
 	#footer {
 		width: 100%;
-		height: 4rem;
 		margin: 0;
-		padding: 10px 0;
+		padding: 20px 20%;
 		max-width: none;
 	}
 	.footericonset {
