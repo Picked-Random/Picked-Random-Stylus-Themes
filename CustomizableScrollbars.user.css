@@ -1,0 +1,19 @@
+/* ==UserStyle==
+@name         Customizable Scrollbars
+@namespace    github.com/Picked-Random/
+@homepageURL  https://github.com/Picked-Random/Picked-Random-Stylus-Themes
+@version      1.0.0
+@description  Modify global scrollbars on Firefox using the stylus options
+@author       Picked Random
+@license      MIT
+@preprocessor stylus
+
+@var color scroll-color1 "Scrollbar Thumb Color" #CDCDCD
+@var color scroll-color2 "Scrollbar Track Color" #F0F0F0
+@var select scroll-width "Scrollbar Width" ["auto", "thin", "none"]
+==/UserStyle== */
+
+* {
+	scrollbar-color: scroll-color1 scroll-color2;
+	scrollbar-width: scroll-width;
+}
