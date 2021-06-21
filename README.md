@@ -9,3 +9,4 @@ A collection of themes I've made for Stylus.
   - [RetroAchievements ReWorked](https://raw.githubusercontent.com/Picked-Random/test/master/RetroAchievementsTheme.user.css): A mostly abandoned theme for Retroachievements
   - [Tweetdeck Custom](https://raw.githubusercontent.com/Picked-Random/Picked-Random-Stylus-Themes/master/TweetdeckCustom.user.css): A modular make-your-own-theme theme
   - [Dark Stylus Theme](https://raw.githubusercontent.com/Picked-Random/Picked-Random-Stylus-Themes/master/DarkStylusTheme.user.css): A dark stylus theme I made
+  - [Customizable Firefox Scrollbars](https://github.com/Picked-Random/Picked-Random-Stylus-Themes/raw/master/CustomizableScrollbars.user.css): Modify the default scrollbars in Firefox to taste
