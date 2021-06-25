@@ -2,7 +2,7 @@
 @name         Tweetdeck Custom
 @namespace    github.com/Picked-Random/
 @homepageURL  https://github.com/Picked-Random/Picked-Random-Stylus-Themes
-@version      0.4.1
+@version      0.4.2
 @description  A customizable Tweetdeck theme
 @author       Picked Random
 @license      MIT
@@ -197,7 +197,7 @@
 	html.dark .column-header,
 	html.dark .column-header-temp,
 	.column-panel {
-		background-color: column-bg;
+		background-color: #0000;
 	}
 	html.dark .caret-inner {
 		border-bottom-color: column-bg;
@@ -233,7 +233,7 @@
 	html.dark .bg-color-twitter-white,
 	.app-nav-tab.is-selected,
  	html.dark .app-nav-tab.is-selected {
-		background-color: column-bg;
+		background-color: #0000;
 	}
 	.overlay,
 	.ovl,
@@ -396,7 +396,7 @@
 	}
 	html.dark .is-inverted-dark .column-scroller::-webkit-scrollbar-track,
 	.column-background-fill {
-		background-color: column-bg;
+		background-color: #0000;
 	}
 
 	/* Firefox Scrollbars */
@@ -404,7 +404,7 @@
 	.scroll-styled-v,
 	html.dark .scroll-styled-h,
 	html.dark .scroll-styled-v {
-		scrollbar-color: accent-color column-bg;
+		scrollbar-color: accent-color #0000;
 		scrollbar-width: scroll-width;
 	}
 
