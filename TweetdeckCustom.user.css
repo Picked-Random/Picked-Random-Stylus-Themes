@@ -2,7 +2,7 @@
 @name         Tweetdeck Custom
 @namespace    github.com/Picked-Random/
 @homepageURL  https://github.com/Picked-Random/Picked-Random-Stylus-Themes
-@version      0.4.2
+@version      0.4.3
 @description  A customizable Tweetdeck theme
 @author       Picked Random
 @license      MIT
@@ -195,8 +195,10 @@
 	}
 	html.dark .column-scroller,
 	html.dark .column-header,
-	html.dark .column-header-temp,
-	.column-panel {
+	html.dark .column-header-temp
+
+	.column-panel,
+	html.dark .column-panel {
 		background-color: #0000;
 	}
 	html.dark .caret-inner {
