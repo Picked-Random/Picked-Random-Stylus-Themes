@@ -2,7 +2,7 @@
 @name         Tweetdeck Custom
 @namespace    github.com/Picked-Random/
 @homepageURL  https://github.com/Picked-Random/Picked-Random-Stylus-Themes
-@version      0.4.0
+@version      0.4.1
 @description  A customizable Tweetdeck theme
 @author       Picked Random
 @license      MIT
@@ -456,6 +456,12 @@
 	html.dark .txt-size--16,
 	.txt-size--16 {
 		font-size: 1em !important;
+	}
+
+	.lst-launcher a > span,
+	html.dark .lst-launcher a > span {
+		/* Specifically to fix the add new column menu, which doesn't work with em units for whatever reason */
+		font-size: 14px !important;
 	}
 
 	/* Adaptive Settings Panel */
