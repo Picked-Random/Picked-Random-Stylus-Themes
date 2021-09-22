@@ -2,7 +2,7 @@
 @name         Tweetdeck Custom
 @namespace    github.com/Picked-Random/
 @homepageURL  https://github.com/Picked-Random/Picked-Random-Stylus-Themes
-@version      0.4.3
+@version      0.4.4
 @description  A customizable Tweetdeck theme
 @author       Picked Random
 @license      MIT
@@ -177,6 +177,10 @@
 	.compose-header,
 	html.dark .compose-header {
 		border-color: bord-color;
+	}
+	.bg-color-twitter-midnight-dark-gray,
+	html.dark .bg-color-twitter-midnight-dark-gray {
+		background-color: #0000;
 	}
 	.divider-bar,
 	html.dark .divider-bar {
